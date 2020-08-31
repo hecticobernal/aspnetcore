@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.DataProtection.XmlEncryption;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
+using Microsoft.Win32;
 
 namespace Microsoft.AspNetCore.DataProtection.KeyManagement
 {
