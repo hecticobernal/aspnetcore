@@ -526,6 +526,11 @@ namespace Microsoft.AspNetCore.DataProtection.KeyManagement
                     if (OSVersionUtil.IsWindows())
                     {
                         Debug.Assert(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
+                        regKeyStorageKey = RegistryXmlRepository.DefaultRegistryKey;
+                    }
+                    if (regKeyStorageKey != null)
+                    {
+                        Debug.Assert(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
                         var regKeyStorageKey = RegistryXmlRepository.DefaultRegistryKey;
 
                         // If the user profile isn't available, we can protect using DPAPI (to machine).
