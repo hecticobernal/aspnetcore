@@ -522,6 +522,7 @@ namespace Microsoft.AspNetCore.DataProtection.KeyManagement
                 else
                 {
                     // Use profile isn't available - can we use the HKLM registry?
+                    RegistryKey regKeyStorageKey = null;
                     if (OSVersionUtil.IsWindows())
                     {
                         Debug.Assert(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
