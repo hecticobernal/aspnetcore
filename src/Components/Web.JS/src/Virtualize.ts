@@ -23,10 +23,8 @@ function init(dotNetHelper: any, spacerBefore: HTMLElement, spacerAfter: HTMLEle
   // Overflow anchoring can cause an ongoing scroll loop, because when we resize the spacers, the browser
   // would update the scroll position to compensate. Then the spacer would remain visible and we'd keep on
   // trying to resize it.
-  const scrollContainer = findClosestScrollContainer(spacerBefore);
-  if (scrollContainer) {
-    scrollContainer.style.overflowAnchor = 'none';
-  }
+  const scrollContainer = findClosestScrollContainer(spacerBefore) || document.documentElement;
+  scrollContainer.style.overflowAnchor = 'none';
 
   const intersectionObserver = new IntersectionObserver(intersectionCallback, {
     root: scrollContainer,
